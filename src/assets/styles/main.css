@@ -2,4 +2,5 @@ body{
     background-image: url('../images/fondoWeb.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0px;
 }

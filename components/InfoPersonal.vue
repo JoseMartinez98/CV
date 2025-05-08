@@ -34,11 +34,14 @@ function toggleFlip() {
       <img class="icons" src="@/assets/images/logoimage.png" alt=""> 
     </div>
     <div class="conjuntoBotones">
-      <a href="src/assets/documents/CvJamg2025.pdf" download="CV_JAMG" class="btn-cv">Descargar CV</a>
-      <a href="https://www.linkedin.com/in/josé-antonio-martínez-gonzález-0a7837215" class="btn-lk" target="_blank">LinkedIn</a>
-      <a href="https://github.com/JoseMartinez98" download="CV_JAMG" class="btn-gb">GitHub</a>
+      <a href="src/assets/documents/CvJamg2025.pdf" download="CV_JAMG" class="btn-cv">
+        <i class="fas fa-file-download" style="margin-right: 8px;"></i>CV</a>
+      <a href="https://www.linkedin.com/in/josé-antonio-martínez-gonzález-0a7837215" class="btn-lk" target="_blank">
+        <i class="fab fa-linkedin" style="margin-right: 8px;"></i>LinkedIn</a>
+      <a href="https://github.com/JoseMartinez98" download="CV_JAMG" class="btn-gb">
+        <i class="fab fa-github" style="margin-right: 8px;"></i>GitHub</a>
     </div>
-    
+    <h1> PROYECTOS: </h1>
   <div class="projectCard" :class="{ flipped: isFlipped }" @click="toggleFlip">
     <div class="card-inner">
       <div class="card-front">
@@ -56,6 +59,7 @@ function toggleFlip() {
       </div>
     </div>
   </div>
+  
   <div class="projectCard" :class="{ flipped: isFlipped }" @click="toggleFlip">
     <div class="card-inner">
       <div class="card-front">
@@ -99,6 +103,7 @@ function toggleFlip() {
 h1 {
   color: white;
   text-shadow: 4px 4px 6px rgba(8, 202, 255, 0.656);
+  margin-bottom: 40px;
 }
 
 .slide-in {
@@ -168,7 +173,7 @@ h1 {
   margin: 60px auto 0 auto;
   border: solid 3px rgba(255, 255, 255, 0.664);
   border-radius: 20px;
-  background-color: rgba(0, 0, 0, 0.221);
+  background-color: rgba(255, 1, 238, 0.272);
   background-image: url('/images/click.png');
   perspective: 1000px;
   cursor: pointer;
@@ -271,15 +276,20 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 16px;
+  gap: 5px;
   margin-top: 40px;
 }
 .btn-cv {
+  width: 60px;
+  height: 20px;
   margin: 40px;
   display: flex;
-  padding: 10px 20px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
   background-color: #912f8c;
   color: white;
+  border: 3px solid #61255d;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
@@ -290,6 +300,8 @@ h1 {
   background-color: #61255d;
 }
 .btn-lk {
+  width: 60px;
+  height: 20px;
   margin: 40px;
   display: flex;
   justify-content: center;
@@ -297,6 +309,7 @@ h1 {
   padding: 20px;
   background-color: #0e76a8 ;
   color: white;
+  border: 3px solid #0b3d73;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
@@ -307,6 +320,8 @@ h1 {
   background-color: #0b3d73;
 }
 .btn-gb {
+  width: 60px;
+  height: 20px;
   margin: 40px;
   display: flex;
   justify-content: center;
@@ -314,6 +329,7 @@ h1 {
   padding: 20px;
   background-color: #242424;
   color: white;
+  border: 3px solid black;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
@@ -380,7 +396,7 @@ h1 {
     margin: 5px;
   }
   .btn-lk .btn-cv .btn-gb{
-    margin: 10px;
+    margin: 5px;
   }
 }
 </style>
