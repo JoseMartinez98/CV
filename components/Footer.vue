@@ -6,8 +6,9 @@ let slides
 let total
 
 function showSlide(i) {
+  const slideWidth = slides.children[0].offsetWidth
   index = (i + total) % total
-  slides.style.transform = `translateX(${-600 * index}px)`
+  slides.style.transform = `translateX(${-slideWidth * index}px)`
 }
 
 function nextSlide() {
@@ -73,12 +74,28 @@ h1 {
 }
 .slider {
       position: relative;
-      width: 600px;
-      height: 400px;
+      width: 32%;
       margin: auto;
       overflow: hidden;
       z-index: 1;
     }
+ @media (max-width: 1024px) {
+  .slider {
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    width: 95%;
+  }
+}
 
     .slides {
       display: flex;
@@ -88,9 +105,10 @@ h1 {
     }
 
     .slides img {
-      width: 600px;
-      height: 400px;
-      object-fit: cover;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        flex-shrink: 0;
     }
 
     .controls {
