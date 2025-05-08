@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue';
-
+import proyectoFP from '@/assets/images/proyectoFP.png';
 const isFlipped = ref(false);
-
+const githubFP = "https://github.com/JoseMartinez98/ProyectoFP";
 function toggleFlip() {
   isFlipped.value = !isFlipped.value;
 }
@@ -12,15 +12,16 @@ function toggleFlip() {
   <div class="informacionPersonal">
 
     
-
-    <h1 class="fade-in">Sobre mí:</h1>
-    <p class="slide-in">💻 Tecnología y desarrollo</p>
-    <p class="slide-in">👤 1 año de experiencia con proyectos para el ciclo superior y la empresa de prácticas.</p>
-    <p class="slide-in">▶️ Programador Full Stack Junior. Interés en el desarrollo web, tanto backend como frontend. Adaptación, formación y desarrollo.</p>
-    <p class="slide-in">🔎 Mi objetivo principal en un trabajo ahora mismo es encontrar una oportunidad, crecer y desarrollarme...</p>
-    <p class="slide-in">✅ Conocimiento en Frameworks como: Laravel y Vue.</p>
-    <p class="slide-in">✅ Lenguajes: PhP, Java, JavaScript, HTML, CSS, MySQL.</p>
-    <p class="slide-in">✅ Uso de test unitarios, componentes, enrutamientos, APIs, diseño UX/UI...</p>
+    <div class="texto">
+      <h1 class="fade-in">Sobre mí:</h1>
+      <p class="slide-in">💻 Tecnología y desarrollo</p>
+      <p class="slide-in">👤 1 año de experiencia con proyectos para el ciclo superior y la empresa de prácticas.</p>
+      <p class="slide-in">▶️ Programador Full Stack Junior. Interés en el desarrollo web, tanto backend como frontend. Adaptación, formación y desarrollo.</p>
+      <p class="slide-in">🔎 Mi objetivo principal en un trabajo ahora mismo es encontrar una oportunidad, crecer y desarrollarme...</p>
+      <p class="slide-in">✅ Conocimiento en Frameworks como: Laravel y Vue.</p>
+      <p class="slide-in">✅ Lenguajes: PhP, Java, JavaScript, HTML, CSS, MySQL.</p>
+      <p class="slide-in">✅ Uso de test unitarios, componentes, enrutamientos, APIs, diseño UX/UI...</p>
+    </div>
 
     <div class="logoHerramientas"> 
       <img class="icons" src="@/assets/images/919830.png" alt="">
@@ -38,25 +39,45 @@ function toggleFlip() {
       <a href="https://github.com/JoseMartinez98" download="CV_JAMG" class="btn-gb">GitHub</a>
     </div>
     
-    <div class="projectCard" :class="{ flipped: isFlipped }" @click="toggleFlip">
-  <div class="card-inner">
-    <div class="card-front">
-      <div class="responsive-iframe-container">
-        <iframe src="https://www.youtube.com/embed/jkTsFFLCJc0?si=GCLqmlM2QPR6NuKS"
-                title="YouTube video player" allowfullscreen></iframe> 
-      </div>   
-    </div>
-    <div class="card-back">
-      <h1>SOBRE EL PROYECTO...</h1>
-      <p>FRAMEWORKS: Laravel, Nuxt</p>
-      <p>LENGUAJES: Javascript, HTML, CSS, PhP </p>
-      <p>BASE DE DATOS: MySQL</p>
-      <p>ADICIONAL: En el proyecto se hace el uso de APIs, EndPoints, test unitarios, operaciones con la base de datos mediante CRUD, uso tablas relacionales... </p>
-
-
+  <div class="projectCard" :class="{ flipped: isFlipped }" @click="toggleFlip">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="responsive-iframe-container">
+          <iframe src="https://www.youtube.com/embed/jkTsFFLCJc0?si=GCLqmlM2QPR6NuKS"
+                  title="YouTube video player" allowfullscreen></iframe> 
+        </div>   
+      </div>
+      <div class="card-back">
+        <h1>SOBRE EL PROYECTO...</h1>
+        <p>FRAMEWORKS: Laravel, Nuxt</p>
+        <p>LENGUAJES: Javascript, HTML, CSS, PhP </p>
+        <p>BASE DE DATOS: MySQL</p>
+        <p>ADICIONAL: En el proyecto se hace el uso de APIs, EndPoints, test unitarios, operaciones con la base de datos mediante CRUD, uso tablas relacionales... </p>
+      </div>
     </div>
   </div>
-</div>
+  <div class="projectCard" :class="{ flipped: isFlipped }" @click="toggleFlip">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="responsive-iframe-container">
+          <div class="img-container">
+            <a :href="githubFP" target="_blank" rel="noopener noreferrer">
+              <img class="imgFP" :src="proyectoFP" alt="Proyecto FP" />
+              <div class="hover-overlay">
+                <span class="hover-icon">↗</span>
+              </div>
+            </a>
+          </div>
+        </div>   
+      </div>
+      <div class="card-back">
+        <h1>SOBRE EL PROYECTO...</h1>
+        <p>LENGUAJES: Javascript, HTML, CSS, PhP </p>
+        <p>BASE DE DATOS: MySQL</p>
+        <p>ADICIONAL: El proyecto es el realizado mientras estudiaba y es algo sencillo, aunque se implementa logica como uso del CRUD. </p>
+      </div>
+    </div>
+  </div>
 
   </div>
 </template>
@@ -65,10 +86,14 @@ function toggleFlip() {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 .informacionPersonal {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: 0 auto;
   font-family: 'Inter';
   max-width: 80%;
+  align-items: center;
+  justify-content: center;
+}
+.texto{
+  margin-bottom: 60px;
 }
 
 h1 {
@@ -110,8 +135,7 @@ h1 {
   margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 13%;
-  max-width: 70%;
+  margin: 0 auto;
   gap: 16px;
   justify-content: center;
   justify-content: space-between;
@@ -140,9 +164,8 @@ h1 {
   justify-content: center;
   align-items: center;
   padding: 2%;
-  margin-left: 17%;
   max-width: 60%;
-  margin-top: 60px;
+  margin: 60px auto 0 auto;
   border: solid 3px rgba(255, 255, 255, 0.664);
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.221);
@@ -150,13 +173,49 @@ h1 {
   perspective: 1000px;
   cursor: pointer;
 }
+.img-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.imgFP{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.hover-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.hover-icon {
+  font-size: 2rem;
+  color: white;
+}
+
+.img-container a:hover .hover-overlay {
+  opacity: 1;
+}
 
 .card-front{
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 1%;
 }
 .card-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
   max-width: 560px;
@@ -192,8 +251,7 @@ h1 {
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
-  align-items: left;
-  justify-content: center;
+
   padding: 20px;
   margin: 2% ;
   overflow-y: auto;
