@@ -169,7 +169,7 @@ h1 {
   border: solid 3px rgba(255, 255, 255, 0.664);
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.221);
-  background-image: url(src/assets/images/click.png);
+  background-image: url('/images/click.png');
   perspective: 1000px;
   cursor: pointer;
 }

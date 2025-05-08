@@ -27,7 +27,7 @@
     height: auto;
     padding: 2rem;
     text-align: center;
-    background-image: url('src/assets/images/fondoEncabezado.jpg');
+    background-image: url('/images/fondoEncabezado.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
