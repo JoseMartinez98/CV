@@ -19,6 +19,10 @@ function prevSlide() {
   showSlide(index - 1)
 }
 
+function openInNewWindow(imageSrc) {
+  window.open(imageSrc, '_blank');
+}
+
 onMounted(() => {
   slides = document.getElementById('slideContainer')
   total = slides.children.length
@@ -32,18 +36,17 @@ onMounted(() => {
         <h1> FORMACIÓN: </h1>
         </div>
         <div class="slider">
-            <div class="slides" id="slideContainer">
-                <img src="/images/1.jpg" alt="Imagen 1">
-                <img src="/images/2.jpg" alt="Imagen 2">
-                <img src="/images/3.jpg" alt="Imagen 3">
-                <img src="/images/4.jpg" alt="Imagen 4">
-                <img src="/images/5.jpg" alt="Imagen 5">
-                <img src="/images/6.jpg" alt="Imagen 6">
-                <img src="/images/7.jpg" alt="Imagen 7">
-                <img src="/images/8.jpg" alt="Imagen 8">
-                <img src="/images/9.jpg" alt="Imagen 9">
-
-            </div>
+          <div class="slides" id="slideContainer">
+            <img src="/images/1.jpg" alt="Imagen 1" @click="openInNewWindow('/images/1.jpg')">
+            <img src="/images/2.jpg" alt="Imagen 2" @click="openInNewWindow('/images/2.jpg')">
+            <img src="/images/3.jpg" alt="Imagen 3" @click="openInNewWindow('/images/3.jpg')">
+            <img src="/images/4.jpg" alt="Imagen 4" @click="openInNewWindow('/images/4.jpg')">
+            <img src="/images/5.jpg" alt="Imagen 5" @click="openInNewWindow('/images/5.jpg')">
+            <img src="/images/6.jpg" alt="Imagen 6" @click="openInNewWindow('/images/6.jpg')">
+            <img src="/images/7.jpg" alt="Imagen 7" @click="openInNewWindow('/images/7.jpg')">
+            <img src="/images/8.jpg" alt="Imagen 8" @click="openInNewWindow('/images/8.jpg')">
+            <img src="/images/9.jpg" alt="Imagen 9" @click="openInNewWindow('/images/9.jpg')">
+          </div>
             <div class="controls">
                 <button @click="prevSlide()">⟨</button>
                 <button @click="nextSlide()">⟩</button>
@@ -70,7 +73,12 @@ h1 {
     width: 100%;
     height: auto;
     background-color: rgba(0, 0, 0, 0.612);
-    background: linear-gradient(to top, rgba(1, 1, 1, 0.912), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7812), transparent),
+    linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent 30%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent 30%);
+}
+img:hover{
+  cursor: pointer;
 }
 .slider {
       position: relative;

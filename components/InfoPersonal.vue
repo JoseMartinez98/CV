@@ -1,28 +1,34 @@
 <script setup>
 import { ref } from 'vue';
 import proyectoFP from '@/assets/images/proyectoFP.png';
-const isFlipped = ref(false);
+
+const flippedStates = ref([false, false]); // una entrada por cada tarjeta
+
 const githubFP = "https://github.com/JoseMartinez98/ProyectoFP";
-function toggleFlip() {
-  isFlipped.value = !isFlipped.value;
+
+function toggleFlip(index) {
+  flippedStates.value[index] = !flippedStates.value[index];
 }
+
 </script>
 
 <template>
   <div class="informacionPersonal">
 
-    
+    <div class="sobreMi">
+    <img src="@/assets/images/yo.png" class="imgYo" alt="">
     <div class="texto">
       <h1 class="fade-in">Sobre mí:</h1>
       <p class="slide-in">💻 Tecnología y desarrollo</p>
       <p class="slide-in">👤 1 año de experiencia con proyectos para el ciclo superior y la empresa de prácticas.</p>
-      <p class="slide-in">▶️ Programador Full Stack Junior. Interés en el desarrollo web, tanto backend como frontend. Adaptación, formación y desarrollo.</p>
+      <p class="slide-in">▶️ Programador Web Full Stack Junior. Adaptación, formación y desarrollo.</p>
       <p class="slide-in">🔎 Mi objetivo principal en un trabajo ahora mismo es encontrar una oportunidad, crecer y desarrollarme...</p>
       <p class="slide-in">✅ Conocimiento en Frameworks como: Laravel y Vue.</p>
       <p class="slide-in">✅ Lenguajes: PhP, Java, JavaScript, HTML, CSS, MySQL.</p>
       <p class="slide-in">✅ Uso de test unitarios, componentes, enrutamientos, APIs, diseño UX/UI...</p>
     </div>
-
+    
+     </div>
     <div class="logoHerramientas"> 
       <img class="icons" src="@/assets/images/919830.png" alt="">
       <img class="icons" src="@/assets/images/css.png" alt="">
@@ -42,7 +48,7 @@ function toggleFlip() {
         <i class="fab fa-github" style="margin-right: 8px;"></i>GitHub</a>
     </div>
     <h1> PROYECTOS: </h1>
-  <div class="projectCard" :class="{ flipped: isFlipped }" @click="toggleFlip">
+    <div class="projectCard" :class="{ flipped: flippedStates[0] }" @click="toggleFlip(0)">
     <div class="card-inner">
       <div class="card-front">
         <div class="responsive-iframe-container">
@@ -60,7 +66,7 @@ function toggleFlip() {
     </div>
   </div>
   
-  <div class="projectCard" :class="{ flipped: isFlipped }" @click="toggleFlip">
+  <div class="projectCard" :class="{ flipped: flippedStates[1] }" @click="toggleFlip(1)">
     <div class="card-inner">
       <div class="card-front">
         <div class="responsive-iframe-container">
@@ -95,6 +101,16 @@ function toggleFlip() {
   max-width: 80%;
   align-items: center;
   justify-content: center;
+}
+.sobreMi{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.imgYo{
+  height: 300px;
+  width: auto;
+  border-radius: 50px;
 }
 .texto{
   margin-bottom: 60px;
@@ -256,7 +272,6 @@ h1 {
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
-
   padding: 20px;
   margin: 2% ;
   overflow-y: auto;
@@ -357,6 +372,17 @@ h1 {
 }
 
 @media (max-width: 768px) {
+
+  .sobreMi{
+    display: block;
+    margin: 10px auto 0 auto;
+  }
+  .imgYo {
+    display: block;
+    height: 150px;
+    width: auto;
+    margin: 0 auto 40px auto;
+}
   .informacionPersonal {
     margin-left: 5%;
     margin-right: 5%;
