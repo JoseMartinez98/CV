@@ -40,7 +40,7 @@ function toggleFlip(index) {
       <img class="icons" src="@/assets/images/logoimage.png" alt=""> 
     </div>
     <div class="conjuntoBotones">
-      <a href="src/assets/documents/CvJamg2025.pdf" download="CV_JAMG" class="btn-cv">
+      <a href="documents/CvJamg2025.pdf" download="CV_JAMG" class="btn-cv">
         <i class="fas fa-file-download" style="margin-right: 8px;"></i>CV</a>
       <a href="https://www.linkedin.com/in/josé-antonio-martínez-gonzález-0a7837215" class="btn-lk" target="_blank">
         <i class="fab fa-linkedin" style="margin-right: 8px;"></i>LinkedIn</a>
